@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:21:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/06 15:39:53 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/06 19:04:19 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -45,31 +45,34 @@ void	push(char **argv)
 {
 	int		i;
 	t_stack	*stack_a = NULL;
-	t_stack *curr;
+	t_stack	*stack_b = NULL;
+	t_stack *tmp;
 	t_stack *root;
 
-	curr = NULL;
-	root = stack_a;
+	tmp = NULL;
+	//root = stack_a;
+	root = NULL;
 	i = 1;
 	while (argv[i] != NULL)
 	{
 		if (!root)
 		{
 			root = ft_lstnew1(ft_atoi(argv[i]));
-			curr = root;
+			tmp = root;
 		}
 		else
 		{
-			curr->next = ft_lstnew1(ft_atoi(argv[i]));
-			curr = curr->next;
+			tmp->next = ft_lstnew1(ft_atoi(argv[i]));
+			tmp = tmp->next;
 		}
 		i++;
 	}
 	stack_a = root;
-	sa_swap(stack_a);
-	while (stack_a != NULL)
+	stack_b = root;
+	sa_swap(stack_b,1);
+	while (stack_b != NULL)
 	{
-		printf("%i\n", stack_a->value);
-		stack_a = stack_a->next;
+		printf("%i\n", stack_b->value);
+		stack_a = stack_b->next;
 	}
 }

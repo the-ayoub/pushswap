@@ -6,10 +6,29 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 13:25:39 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/05 01:07:42 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/06 19:34:31 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
+
+int	checkints(char **argv)
+{
+	long	a;
+	int		i;
+
+	i = 1;
+	while (argv[i])
+	{
+		a = ft_atoi(argv[i]);
+		if (a > INT_MAX || a < INT_MIN)
+		{
+			printf("error");
+			return (-1);
+		}
+		i++;
+	}
+	return (0);
+}
 
 int	checker(char *str)
 {
@@ -40,14 +59,14 @@ int	checker(char *str)
 
 int	check_dup(char *s1, char *s2)
 {
-	size_t	i;
+	int	a;
+	int	b;
 
-	i = ft_strlen(s1);
-	if (i != ft_strlen(s2))
-		return (1);
-	if (ft_strncmp(s1, s2, i) == 0)
+	a = ft_atoi(s1);
+	b = ft_atoi(s2);
+	if (a == b)
 	{
-		printf("error");
+		printf("%s", "error");
 		return (-1);
 	}
 	return (1);
@@ -70,7 +89,6 @@ int	check_order(char **argv)
 	}
 	return (1);
 }
-
 int	checkers(int argc, char **argv)
 {
 	int	i;
