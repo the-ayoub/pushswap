@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 12:22:06 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/07 19:20:15 by aybelhaj         ###   ########.fr       */
+/*   Created: 2025/01/13 19:10:59 by aybelhaj          #+#    #+#             */
+/*   Updated: 2025/01/13 21:01:24 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "pushswap.h"
-void pa(t_stack **stack_a, t_stack **stack_b)
+ 
+void	ind(t_stack **stack_a, int total_nodes)
 {
 	t_stack	*tmp;
-	t_stack	*aux = NULL;
+	t_stack	*aux;
+	int		i;
+	int		min_value;
 
-	tmp = (*stack_b)->next;
-	aux = *stack_b;
-	(*stack_b)->next = *stack_a;
-	*stack_a = aux;
-	*stack_b = tmp;
-	printf("pa\n");
+	i = 0;
+	while (i < total_nodes)
+	{
+		aux = *stack_a;
+		tmp = NULL;
+		min_value = INT_MAX;
+		while (aux)
+		{
+			if (aux->index == 0 && aux->value < min_value)
+			{
+				min_value = aux->value;
+				tmp = aux;
+			}
+			aux = aux->next;
+		}
+		if (tmp)
+			tmp->index = i + 1;
+
+		i++;
+	}
 }
 
-void pb(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*tmp;
-	t_stack	*aux = NULL;
-
-	tmp = (*stack_a)->next;
-	aux = *stack_a;
-	(*stack_a)->next = *stack_b;
-	*stack_b = aux;
-	*stack_a = tmp;
-	printf("pb\n");
-}

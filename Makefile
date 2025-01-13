@@ -17,7 +17,7 @@ CC		=	cc
 CFLAGS	=	-g -Wall -Wextra -Werror
 
 OBJDIR	=	build
-SRCS	=	push_swap.c checker.c  main.c swap.c push.c rotate.c rrotate.c order.c
+SRCS	=	push_swap.c checker.c  main.c swap.c push.c rotate.c rrotate.c order.c index.c
 
 OBJS	=	$(addprefix $(OBJDIR)/, ${SRCS:.c=.o})
 LIBFT_PATH	=	./libft

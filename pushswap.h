@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:17:23 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/08 18:42:38 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:18:21 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int					check_order(char **argv);
 int					push_swap(char **argv);
 int					checkers(int argc, char **argv);
 int					checkints(char **argv);
+int					ft_lstsize1(t_stack *stack_a);
+int					min_node(t_stack **stack_a);
 void				sa(t_stack *stack_a, int i);
 void				sb(t_stack *stack_b, int i);
 void				ss(t_stack *stack_a, t_stack *stack_b);
@@ -43,6 +45,9 @@ void				rra(t_stack **stack_a, int i);
 void				rrb(t_stack **stack_b, int i);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
 void				sortthree(t_stack **stack_a);
+void				sortfive(t_stack **stack_a, t_stack **stack_b);
+void				pushmin(t_stack **stack_a, t_stack **stack_b, int p, int i);
+void				ind(t_stack **stack_a, int total_nodes);
 t_stack				*push(char **argv);
 t_stack				*new_stack(void);
 #endif

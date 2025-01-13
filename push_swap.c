@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:21:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/08 18:42:05 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:28:41 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -14,28 +14,30 @@
 int	push_swap(char **argv)
 {
 	t_stack *stack_a;
+	t_stack	*stack_b;
+	t_stack *aux;
+	int i;
 	stack_a = push(argv);
-	sortthree(&stack_a);
-	//sa(stack_a,1);
-	//rra(&stack_a,1);
-	while (stack_a != NULL)
+	i = ft_lstsize1(stack_a);
+	if(i <= 3)
+		sortthree(&stack_a);
+	if(i == 4 || i == 5)
+		sortfive(&stack_a,&stack_b);
+	else
+		ind(&stack_a, i);
+	aux = stack_a;
+    while (aux)
+    {
+        printf("Value: %d, Index: %d\n", aux->value, aux->index);
+        aux = aux->next;
+    }
+	/*while (stack_a != NULL)
 	{
-		printf("a:%i\n", stack_a->value);
+		printf("a:%i\n", stack_a->index);
 		stack_a = stack_a->next; 
-	}
+	}*/
 	return (0);
 }
-/*t_stack	*new_stack(void)
-{
-	t_stack	*new;
-
-	new = (t_stack *)malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->top = NULL;
-	new->size = 0;
-	return (new);
-}*/
 
 t_stack	*ft_lstnew1(int value)
 {
