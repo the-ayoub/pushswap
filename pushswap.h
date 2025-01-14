@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:17:23 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/13 20:18:21 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:35:02 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_stack
 
 }					t_stack;
 
+void push_chunks(t_stack **stack_a,t_stack **stack_b,int i);
+t_stack *chunk_1(t_stack **stack_a,int i);
 int					checker(char *str);
 int					check_dup(char *s1, char *s2);
 int					check_order(char **argv);
@@ -48,6 +50,7 @@ void				sortthree(t_stack **stack_a);
 void				sortfive(t_stack **stack_a, t_stack **stack_b);
 void				pushmin(t_stack **stack_a, t_stack **stack_b, int p, int i);
 void				ind(t_stack **stack_a, int total_nodes);
+t_stack	*push(char **argv);
 t_stack				*push(char **argv);
 t_stack				*new_stack(void);
 #endif
