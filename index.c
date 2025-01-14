@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:10:59 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/14 12:48:54 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:01:07 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack *chunk_1(t_stack **stack_a,int i)
 	else
 		return(hold_second);
 }
-void push_chunk(t_stack **stack_a,t_stack **stack_b,int i)
+void push_chunks(t_stack **stack_a,t_stack **stack_b,int i)
 {
 	t_stack *tmp;
 	t_stack *target;

@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:21:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/14 12:27:12 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:47:45 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -16,6 +16,7 @@ int	push_swap(char **argv)
 	t_stack *stack_a;
 	t_stack	*stack_b;
 	int i;
+	int b = 0;
 	stack_a = push(argv);
 	i = ft_lstsize1(stack_a);
 	if(i <= 3)
@@ -23,18 +24,20 @@ int	push_swap(char **argv)
 	if(i == 4 || i == 5)
 		sortfive(&stack_a,&stack_b);
 	else
-		push_chunks(&stack_a,&stack_b ,i);
-	/*aux = stack_a;
-    while (aux)
-    {
-        printf("Value: %d, Index: %d\n", aux->value, aux->index);
-        aux = aux->next;
-    }*/
-	/*while (stack_a != NULL)
 	{
-		printf("a:%i\n", stack_a->index);
-		stack_a = stack_a->next; 
-	}*/
+		ind(&stack_a,i);
+		while (b <= 20)
+		{
+			push_chunks(&stack_a,&stack_b ,i);
+			b++;
+		}
+	}
+	b = 20;
+	while (b--)
+	{
+		printf("b:%i\n", stack_b->value);
+		stack_b = stack_b->next;
+	}
 	return (0);
 }
 
