@@ -6,7 +6,7 @@
 #    By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/25 21:50:13 by aybelhaj          #+#    #+#              #
-#    Updated: 2025/01/08 12:30:21 by aybelhaj         ###   ########.fr        #
+#    Updated: 2025/01/14 16:02:08 by aybelhaj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	push_swap
 AR		=	ar
 ARFLAGS	=	-rcs
 CC		=	cc
-CFLAGS	=	-g -Wall -Wextra -Werror
+CFLAGS	=	-g -Wall -Wextra -Werror 
 
 OBJDIR	=	build
 SRCS	=	push_swap.c checker.c  main.c swap.c push.c rotate.c rrotate.c order.c index.c

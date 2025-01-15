@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:21:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/14 15:47:45 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:14:29 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -14,7 +14,7 @@
 int	push_swap(char **argv)
 {
 	t_stack *stack_a;
-	t_stack	*stack_b;
+	t_stack	*stack_b =NULL;
 	int i;
 	int b = 0;
 	stack_a = push(argv);
@@ -26,17 +26,23 @@ int	push_swap(char **argv)
 	else
 	{
 		ind(&stack_a,i);
-		while (b <= 20)
+		while (b < i)
 		{
 			push_chunks(&stack_a,&stack_b ,i);
+			b++;
+		}
+		b = 0;
+		while(b < i)
+		{
+			sortback(&stack_a,&stack_b,i);
 			b++;
 		}
 	}
 	b = 20;
 	while (b--)
 	{
-		printf("b:%i\n", stack_b->value);
-		stack_b = stack_b->next;
+		printf("a:%i\n", stack_a->value);
+		stack_a = stack_a->next;
 	}
 	return (0);
 }
