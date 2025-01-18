@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:21:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/18 13:21:52 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/18 17:03:42 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -70,7 +70,6 @@ t_stack	*push(char **argv)
 
 	stack_a = NULL;
 	tmp = NULL;
-	root = stack_a;
 	root = NULL;
 	i = 1;
 	while (argv[i] != NULL)

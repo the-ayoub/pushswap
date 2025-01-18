@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:10:59 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/18 14:27:28 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/18 17:16:27 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 		aux = *stack_a;
 		tmp = NULL;
 		min_value = INT_MAX;
-		while (aux)
+		while (aux) 
 		{
 			if (aux->index == 0 && aux->value < min_value)
 			{
@@ -180,7 +180,7 @@ void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos)
         }
     }
     pb(stack_a, stack_b);
-	if((*stack_b)->index > pos/2)
+	if((*stack_b)->index < pos/2)
 		rrb(stack_b,1);
 }
 
@@ -257,4 +257,3 @@ void sortback(t_stack **stack_a, t_stack **stack_b, int i)
         pa(stack_a, stack_b);
     }
 }
-
