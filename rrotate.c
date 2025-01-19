@@ -14,7 +14,8 @@ void rra(t_stack **stack_a, int i)
 {
 	t_stack *tmp;
 	t_stack	*aux;
-	
+	if (!*stack_a || (*stack_a)->next == NULL)
+		return;
 	tmp = *stack_a;
 	aux = *stack_a;
 	while (tmp->next != NULL)
@@ -32,7 +33,8 @@ void rrb(t_stack **stack_b, int i)
 {
 	t_stack *tmp;
 	t_stack	*aux;
-	
+	if (!*stack_b || (*stack_b)->next == NULL)
+		return;
 	tmp = *stack_b;
 	aux = *stack_b;
 	while (tmp->next != NULL)

@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:10:59 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/18 17:16:27 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/19 16:57:43 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ind(t_stack **stack_a, int total_nodes)
 			aux = aux->next;
 		}
 		if (tmp)
-			tmp->index = i; // Cambiado de i + 1 a i
+			tmp->index = i;
 		i++;
 	}
 }
@@ -87,10 +87,8 @@ t_stack	*chunk_1(t_stack **stack_a, int i, int pos)
 	while (tmp != NULL)
 	{
 		if (tmp->index <= pos)
-		{
 			hold_second = tmp;
-			b++;
-		}
+		b++;
 		tmp = tmp->next;
 	}
 	b = i - b;
@@ -155,7 +153,7 @@ t_stack	*chunk_1(t_stack **stack_a, int i, int pos)
 	pb(stack_a, stack_b);
 }*/
 
-void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos)
+void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos ,int b)
 {
     t_stack *tmp = *stack_a;
     t_stack *target = chunk_1(stack_a,i, pos);
@@ -180,8 +178,10 @@ void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos)
         }
     }
     pb(stack_a, stack_b);
-	if((*stack_b)->index < pos/2)
-		rrb(stack_b,1);
+	if (b != 0)
+		pos = pos + 10;
+	if((*stack_b)->next && (*stack_b)->index < pos/2)
+		rb(stack_b,1);
 }
 
 int	max_node(t_stack **stack_b)
@@ -255,5 +255,6 @@ void sortback(t_stack **stack_a, t_stack **stack_b, int i)
         }
 
         pa(stack_a, stack_b);
+		i--;
     }
 }
