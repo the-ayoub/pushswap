@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 11:21:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/19 16:54:40 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:11:13 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -34,7 +34,7 @@ int	push_swap(char **argv)
 		while (b < i)
 		{
 			pos = ((b / chunk_size) + 1) * chunk_size;
-			push_chunks(&stack_a, &stack_b, i - b, pos, b);
+			push_chunks(&stack_a, &stack_b, i - b, pos);
 			b++;
 		}
 		while (stack_b != NULL)

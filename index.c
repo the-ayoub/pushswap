@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:10:59 by aybelhaj          #+#    #+#             */
-/*   Updated: 2025/01/19 16:57:43 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:12:36 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ t_stack	*chunk_1(t_stack **stack_a, int i, int pos)
 	}
 	while (tmp != NULL)
 	{
-		if (tmp->index <= pos)
+		if (tmp->index < pos)
 			hold_second = tmp;
 		b++;
 		tmp = tmp->next;
@@ -153,7 +153,8 @@ t_stack	*chunk_1(t_stack **stack_a, int i, int pos)
 	pb(stack_a, stack_b);
 }*/
 
-void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos ,int b)
+void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos)
+
 {
     t_stack *tmp = *stack_a;
     t_stack *target = chunk_1(stack_a,i, pos);
@@ -178,9 +179,9 @@ void push_chunks(t_stack **stack_a, t_stack **stack_b, int i, int pos ,int b)
         }
     }
     pb(stack_a, stack_b);
-	if (b != 0)
-		pos = pos + 10;
-	if((*stack_b)->next && (*stack_b)->index < pos/2)
+	/*if (pos != 20)
+		pos = pos + 20;*/
+	if((*stack_b)->next && (*stack_b)->index < pos - 10)
 		rb(stack_b,1);
 }
 
